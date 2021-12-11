@@ -9,14 +9,8 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-//    let restaurantNames = ["Burger Heroes", "Kitchen", "Bonsai",
-//                           "Индокитай", "X.O","Балкан Гриль","Sherlock Holmes",
-//                            "Speak Easy", "Morris Pub", "Вкусные истории",
-//                            "Классик", "Love&Life", "Шок","Бочка"]
     
-    let places = [
-        Place(name: "Burger Heroes", location: "Moscow", type: "Ресторан", image: "Burger Heroes")
-    ]
+    let places = Place.getPlaces()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +34,6 @@ class MainViewController: UITableViewController {
         
         return cell
     }
-    
-    // MARK: - Table view delegate
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-    }
   
     /*
     // MARK: - Navigation
@@ -57,4 +45,6 @@ class MainViewController: UITableViewController {
     }
     */
 
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue){}
+    
 }
